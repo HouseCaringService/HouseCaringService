@@ -1,0 +1,1050 @@
+<!DOCTYPE html>
+<html lang="pa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>House Caring Service - ਬਠਿੰਡਾ ਜ਼ਿਲ੍ਹਾ</title>
+
+    <!-- Font Awesome 6 CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- AOS Animation Library CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <!-- Particles.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js">
+    </script>
+
+    <style>
+        :root {
+            --bg-dark: #0f0c29;
+            --bg-mid: #302b63;
+            --bg-light: #24243e;
+            --glass-bg: rgba(255, 255, 255, 0.08);
+            --glass-border: rgba(255, 255, 255, 0.2);
+            --accent-pink: #ff6b6b;
+            --accent-coral: #ee5a24;
+            --accent-blue: #4facfe;
+            --accent-purple: #a855f7;
+            --text-white: #ffffff;
+            --text-light: #e0e0e0;
+            --text-muted: #b0b0b0;
+            --shadow-glow-pink: 0 0 25px rgba(255, 107, 107, 0.5);
+            --shadow-glow-blue: 0 0 25px rgba(79, 172, 254, 0.5);
+            --shadow-glow-purple: 0 0 25px rgba(168, 85, 247, 0.5);
+            --transition-smooth: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1.2);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', 'Poppins', 'Noto Sans Gurmukhi', sans-serif;
+            background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
+            color: var(--text-white);
+            min-height: 100vh;
+            overflow-x: hidden;
+            position: relative;
+            line-height: 1.7;
+        }
+
+        /* ========== Particles.js Canvas ========== */
+        #particles-js {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        /* ========== Main Content Wrapper ========== */
+        .main-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* ========== NAVBAR - Glass Effect ========== */
+        .navbar {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(15, 12, 41, 0.75);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+            padding: 15px 0;
+            transition: var(--transition-smooth);
+        }
+
+        .navbar.scrolled {
+            background: rgba(15, 12, 41, 0.92);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+            padding: 10px 0;
+        }
+
+        .nav-container {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 1.7rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--accent-pink), var(--accent-blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-logo i {
+            font-size: 2rem;
+            background: linear-gradient(135deg, var(--accent-pink), var(--accent-coral));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: heartbeat 1.5s ease-in-out infinite;
+        }
+
+        @keyframes heartbeat {
+            0%,
+            100% {
+                transform: scale(1);
+            }
+            15% {
+                transform: scale(1.25);
+            }
+            30% {
+                transform: scale(1);
+            }
+            45% {
+                transform: scale(1.15);
+            }
+            60% {
+                transform: scale(1);
+            }
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 35px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: var(--transition-smooth);
+            position: relative;
+            padding-bottom: 5px;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0%;
+            height: 2.5px;
+            background: linear-gradient(90deg, var(--accent-pink), var(--accent-blue));
+            transition: width 0.3s ease;
+            border-radius: 5px;
+        }
+
+        .nav-links a:hover {
+            color: var(--text-white);
+            text-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-badge {
+            background: linear-gradient(135deg, var(--accent-coral), var(--accent-pink));
+            color: white;
+            padding: 8px 18px;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            box-shadow: var(--shadow-glow-pink);
+            animation: pulse-badge 2s ease-in-out infinite;
+            white-space: nowrap;
+        }
+
+        @keyframes pulse-badge {
+            0%,
+            100% {
+                box-shadow: 0 0 15px rgba(255, 107, 107, 0.5);
+            }
+            50% {
+                box-shadow: 0 0 35px rgba(255, 107, 107, 0.9);
+            }
+        }
+
+        /* ========== HERO SECTION ========== */
+        .hero {
+            padding: 100px 25px 80px;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3.2rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, #ffffff 0%, #e0e0e0 40%, var(--accent-blue) 70%, var(--accent-purple) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 20px;
+            line-height: 1.3;
+            animation: fadeInDown 1s ease;
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            color: var(--text-muted);
+            margin-bottom: 40px;
+            animation: fadeInUp 1s ease 0.2s both;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 25px;
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: fadeInUp 1s ease 0.4s both;
+        }
+
+        .btn-glow {
+            padding: 16px 40px;
+            border-radius: 50px;
+            border: none;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            text-decoration: none;
+            transition: var(--transition-smooth);
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            letter-spacing: 0.5px;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .btn-give {
+            background: linear-gradient(135deg, var(--accent-coral), var(--accent-pink));
+            color: white;
+            box-shadow: var(--shadow-glow-pink);
+        }
+
+        .btn-give:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 45px rgba(255, 107, 107, 0.8);
+            scale: 1.03;
+        }
+
+        .btn-take {
+            background: linear-gradient(135deg, #4facfe, #00f2fe);
+            color: white;
+            box-shadow: var(--shadow-glow-blue);
+        }
+
+        .btn-take:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 45px rgba(79, 172, 254, 0.8);
+            scale: 1.03;
+        }
+
+        .hero-icon-animation {
+            font-size: 5rem;
+            margin-top: 50px;
+            animation: float 3s ease-in-out infinite;
+            background: linear-gradient(135deg, var(--accent-pink), var(--accent-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        @keyframes float {
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-30px);
+            }
+        }
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ========== INFO CARDS SECTION ========== */
+        .cards-section {
+            padding: 60px 25px;
+            max-width: 1300px;
+            margin: 0 auto;
+        }
+
+        .cards-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 35px;
+        }
+
+        .glass-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border: 1px solid var(--glass-border);
+            border-radius: 25px;
+            padding: 45px 30px;
+            text-align: center;
+            transition: var(--transition-smooth);
+            cursor: default;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .glass-card:hover {
+            transform: translateY(-12px) scale(1.02);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4), 0 0 30px rgba(168, 85, 247, 0.3);
+            border-color: rgba(255, 255, 255, 0.4);
+        }
+
+        .glass-card i {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, var(--accent-pink), var(--accent-blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            transition: var(--transition-smooth);
+        }
+
+        .glass-card:hover i {
+            transform: scale(1.2) rotate(5deg);
+        }
+
+        .glass-card h3 {
+            font-size: 1.7rem;
+            margin-bottom: 12px;
+            color: var(--text-white);
+        }
+
+        .glass-card p {
+            color: var(--text-muted);
+            font-size: 1rem;
+        }
+
+        /* ========== FORM SECTIONS ========== */
+        .form-section {
+            padding: 70px 25px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .form-section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 15px;
+            background: linear-gradient(135deg, var(--accent-pink), var(--accent-blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .form-section-desc {
+            text-align: center;
+            color: var(--text-muted);
+            margin-bottom: 50px;
+            font-size: 1.1rem;
+        }
+
+        .form-glass-container {
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: 30px;
+            padding: 50px 40px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+            transition: var(--transition-smooth);
+        }
+
+        .form-glass-container:hover {
+            border-color: rgba(255, 255, 255, 0.35);
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5), 0 0 40px rgba(168, 85, 247, 0.2);
+        }
+
+        .form-fields {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .form-fields label {
+            font-weight: 600;
+            color: var(--text-light);
+            margin-bottom: -10px;
+            font-size: 0.95rem;
+        }
+
+        .form-fields input,
+        .form-fields select,
+        .form-fields textarea {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            border-radius: 12px;
+            padding: 14px 18px;
+            color: var(--text-white);
+            font-size: 1rem;
+            font-family: inherit;
+            transition: var(--transition-smooth);
+            outline: none;
+        }
+
+        .form-fields input::placeholder,
+        .form-fields textarea::placeholder {
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .form-fields input:focus,
+        .form-fields select:focus,
+        .form-fields textarea:focus {
+            border-color: var(--accent-blue);
+            box-shadow: 0 0 20px rgba(79, 172, 254, 0.4);
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .form-fields select option {
+            background: #1a1a3e;
+            color: white;
+        }
+
+        .checkbox-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .checkbox-group label {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 10px 18px;
+            border-radius: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: var(--transition-smooth);
+            font-weight: 500;
+        }
+
+        .checkbox-group label:hover {
+            background: rgba(255, 255, 255, 0.12);
+            border-color: var(--accent-pink);
+        }
+
+        .checkbox-group input[type="checkbox"] {
+            accent-color: var(--accent-pink);
+            transform: scale(1.2);
+        }
+
+        .btn-submit {
+            background: linear-gradient(135deg, var(--accent-purple), var(--accent-pink));
+            color: white;
+            border: none;
+            padding: 16px 35px;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            box-shadow: var(--shadow-glow-purple);
+            letter-spacing: 0.5px;
+            margin-top: 10px;
+        }
+
+        .btn-submit:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 0 50px rgba(168, 85, 247, 0.8);
+            scale: 1.03;
+        }
+
+        .form-illustration {
+            text-align: center;
+            font-size: 8rem;
+            color: rgba(255, 255, 255, 0.15);
+            transition: var(--transition-smooth);
+        }
+
+        .form-glass-container:hover .form-illustration {
+            color: rgba(255, 255, 255, 0.3);
+            transform: scale(1.05);
+        }
+
+        .fee-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--accent-coral), var(--accent-pink));
+            color: white;
+            padding: 12px 28px;
+            border-radius: 50px;
+            font-weight: 800;
+            font-size: 1.2rem;
+            margin-bottom: 25px;
+            animation: pulse-badge 2s infinite;
+            box-shadow: var(--shadow-glow-pink);
+        }
+
+        /* ========== CONTACT BAR ========== */
+        .contact-bar {
+            text-align: center;
+            padding: 50px 25px;
+            background: rgba(255, 255, 255, 0.03);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            margin: 40px 0;
+        }
+
+        .contact-bar .phone-number {
+            font-size: 2.5rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, var(--accent-blue), var(--accent-pink));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 10px;
+        }
+
+        .contact-bar .district-info {
+            color: var(--text-muted);
+            font-size: 1rem;
+        }
+
+        /* ========== FOOTER ========== */
+        .footer {
+            text-align: center;
+            padding: 35px 25px;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        /* ========== FLOATING CALL BUTTON ========== */
+        .floating-call-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 999;
+            background: linear-gradient(135deg, #25d366, #128c7e);
+            color: white;
+            width: 65px;
+            height: 65px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.6);
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            text-decoration: none;
+            animation: float-call 2s ease-in-out infinite;
+        }
+
+        .floating-call-btn:hover {
+            transform: scale(1.15);
+            box-shadow: 0 15px 40px rgba(37, 211, 102, 0.9);
+        }
+
+        @keyframes float-call {
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-12px);
+            }
+        }
+
+        /* ========== TOAST / MODAL ========== */
+        .toast-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.4s ease;
+        }
+
+        .toast-overlay.active {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        .toast-box {
+            background: linear-gradient(135deg, #1e1b4b, #312e81);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 25px;
+            padding: 50px 40px;
+            text-align: center;
+            max-width: 500px;
+            width: 90%;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6), 0 0 50px rgba(168, 85, 247, 0.5);
+            transform: scale(0.8);
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .toast-overlay.active .toast-box {
+            transform: scale(1);
+        }
+
+        .toast-box i {
+            font-size: 4rem;
+            color: #4ade80;
+            margin-bottom: 20px;
+            animation: heartbeat 1s ease;
+        }
+
+        .toast-box h2 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+            color: white;
+        }
+
+        .toast-box p {
+            color: #cbd5e1;
+            margin-bottom: 25px;
+        }
+
+        .toast-close-btn {
+            background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
+            color: white;
+            border: none;
+            padding: 12px 35px;
+            border-radius: 50px;
+            font-weight: 700;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: var(--transition-smooth);
+        }
+
+        .toast-close-btn:hover {
+            box-shadow: 0 0 30px rgba(79, 172, 254, 0.7);
+            transform: scale(1.05);
+        }
+
+        /* ========== RESPONSIVE ========== */
+        @media (max-width: 900px) {
+            .form-glass-container {
+                grid-template-columns: 1fr;
+                padding: 35px 25px;
+            }
+            .form-illustration {
+                display: none;
+            }
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            .nav-container {
+                flex-direction: column;
+                gap: 12px;
+            }
+            .nav-links {
+                gap: 15px;
+            }
+            .contact-bar .phone-number {
+                font-size: 1.8rem;
+            }
+        }
+        @media (max-width: 500px) {
+            .hero h1 {
+                font-size: 1.7rem;
+            }
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            .btn-glow {
+                width: 100%;
+                justify-content: center;
+            }
+            .cards-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Particles.js Background -->
+    <div id="particles-js"></div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+
+        <!-- ========== NAVBAR ========== -->
+        <nav class="navbar" id="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <i class="fas fa-house-heart"></i>
+                    <span>House Caring Service</span>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#home">ਹੋਮ</a></li>
+                    <li><a href="#about">ਸਾਡੇ ਬਾਰੇ</a></li>
+                    <li><a href="#services">ਸੇਵਾਵਾਂ</a></li>
+                    <li><a href="#contact-sec">ਸੰਪਰਕ</a></li>
+                    <li><span class="nav-badge">📍 ਬਠਿੰਡਾ ਜ਼ਿਲ੍ਹਾ ਹੀ</span></li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- ========== HERO SECTION ========== -->
+        <section class="hero" id="home">
+            <div class="hero-content" data-aos="fade-up" data-aos-duration="1000">
+                <h1>🏠 ਬਠਿੰਡਾ ਜ਼ਿਲ੍ਹੇ ਵਿੱਚ ਘਰ ਬੈਠੇ ਦੇਖਭਾਲ ਸੇਵਾ</h1>
+                <p class="hero-subtitle">ਬਜ਼ੁਰਗਾਂ, ਬੱਚਿਆਂ ਅਤੇ ਨੌਜਵਾਨਾਂ ਲਈ ਤਜਰਬੇਕਾਰ ਕੇਅਰਗਿਵਰ। ਫ਼ੀਸ: ₹20,000/ਮਹੀਨਾ।</p>
+                <div class="hero-buttons">
+                    <a href="#give-care-section" class="btn-glow btn-give">
+                        <i class="fas fa-hand-holding-heart"></i> ਸੇਵਾ ਦਿਓ
+                    </a>
+                    <a href="#take-care-section" class="btn-glow btn-take">
+                        <i class="fas fa-user-nurse"></i> ਸੇਵਾ ਲਓ
+                    </a>
+                </div>
+                <div class="hero-icon-animation">
+                    <i class="fas fa-heart-circle-check"></i>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== INFO CARDS SECTION ========== -->
+        <section class="cards-section" id="services" data-aos="fade-up" data-aos-duration="1000">
+            <div class="cards-container">
+                <div class="glass-card" data-aos="zoom-in" data-aos-delay="100">
+                    <i class="fas fa-baby"></i>
+                    <h3>👶 ਬੇਬੀ ਕੇਅਰ</h3>
+                    <p>ਨਵਜੰਮੇ ਬੱਚਿਆਂ ਅਤੇ ਛੋਟੇ ਬੱਚਿਆਂ ਦੀ ਮਾਹਰ ਦੇਖਭਾਲ। ਖੁਰਾਕ, ਸਫ਼ਾਈ ਅਤੇ ਸੁਰੱਖਿਆ ਦਾ ਪੂਰਾ ਧਿਆਨ।</p>
+                </div>
+                <div class="glass-card" data-aos="zoom-in" data-aos-delay="200">
+                    <i class="fas fa-person"></i>
+                    <h3>🧑 ਨੌਜਵਾਨ ਕੇਅਰ</h3>
+                    <p>ਨੌਜਵਾਨਾਂ ਲਈ ਸਰੀਰਕ ਅਤੇ ਮਾਨਸਿਕ ਸਹਾਇਤਾ। ਪੜ੍ਹਾਈ, ਖੇਡਾਂ ਅਤੇ ਰੋਜ਼ਾਨਾ ਗਤੀਵਿਧੀਆਂ ਵਿੱਚ ਮਦਦ।</p>
+                </div>
+                <div class="glass-card" data-aos="zoom-in" data-aos-delay="300">
+                    <i class="fas fa-person-cane"></i>
+                    <h3>👴 ਬਜ਼ੁਰਗ ਕੇਅਰ</h3>
+                    <p>ਬਜ਼ੁਰਗਾਂ ਲਈ ਪੂਰਾ ਸਹਾਰਾ। ਦਵਾਈਆਂ, ਖੁਰਾਕ, ਸੈਰ ਅਤੇ ਭਾਵਨਾਤਮਕ ਸਹਾਇਤਾ।</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== CATEGORY 1: GIVE CARE FORM ========== -->
+        <section class="form-section" id="give-care-section" data-aos="fade-right" data-aos-duration="1200">
+            <h2 class="form-section-title">🤲 ਸੇਵਾ ਦਿਓ, ਕਮਾਓ</h2>
+            <p class="form-section-desc">ਜੇਕਰ ਤੁਸੀਂ ਬਜ਼ੁਰਗਾਂ, ਬੱਚਿਆਂ ਜਾਂ ਮਰੀਜ਼ਾਂ ਦੀ ਦੇਖਭਾਲ ਕਰਨੀ ਚਾਹੁੰਦੇ ਹੋ, ਤਾਂ ਹੁਣੇ ਰਜਿਸਟਰ ਕਰੋ।</p>
+            <div class="form-glass-container" id="about">
+                <div class="form-fields">
+                    <form id="giveCareForm" onsubmit="handleGiveCareSubmit(event)">
+                        <label>ਪੂਰਾ ਨਾਮ <span style="color:#ff6b6b;">*</span></label>
+                        <input type="text" placeholder="ਆਪਣਾ ਪੂਰਾ ਨਾਮ ਲਿਖੋ" required id="g_name">
+
+                        <label>ਫ਼ੋਨ ਨੰਬਰ <span style="color:#ff6b6b;">*</span></label>
+                        <input type="tel" placeholder="98765-XXXXX" required pattern="[0-9]{10}" title="10 ਅੰਕਾਂ ਦਾ ਫ਼ੋਨ ਨੰਬਰ ਪਾਓ" id="g_phone">
+
+                        <label>ਈਮੇਲ <span style="color:#ff6b6b;">*</span></label>
+                        <input type="email" placeholder="example@email.com" required id="g_email">
+
+                        <label>ਬਠਿੰਡਾ ਜ਼ਿਲ੍ਹੇ ਵਿੱਚ ਪਤਾ <span style="color:#ff6b6b;">*</span></label>
+                        <input type="text" placeholder="ਪਿੰਡ/ਸ਼ਹਿਰ, ਬਠਿੰਡਾ" required id="g_address">
+
+                        <label>ਲਿੰਗ <span style="color:#ff6b6b;">*</span></label>
+                        <select required id="g_gender">
+                            <option value="">-- ਚੁਣੋ --</option>
+                            <option value="male">ਪੁਰਸ਼ (Male)</option>
+                            <option value="female">ਔਰਤ (Female)</option>
+                            <option value="other">ਹੋਰ (Other)</option>
+                        </select>
+
+                        <label>ਤੁਸੀਂ ਕਿਹੜੀ ਦੇਖਭਾਲ ਕਰ ਸਕਦੇ ਹੋ? <span style="color:#ff6b6b;">*</span></label>
+                        <div class="checkbox-group">
+                            <label><input type="checkbox" value="baby" class="g_care_type"> ਬੱਚੇ ਦੀ ਦੇਖਭਾਲ</label>
+                            <label><input type="checkbox" value="young" class="g_care_type"> ਨੌਜਵਾਨ ਦੀ ਦੇਖਭਾਲ</label>
+                            <label><input type="checkbox" value="elderly" class="g_care_type"> ਬਜ਼ੁਰਗਾਂ ਦੀ ਦੇਖਭਾਲ</label>
+                        </div>
+
+                        <label>ਤਜਰਬਾ <span style="color:#ff6b6b;">*</span></label>
+                        <select required id="g_experience">
+                            <option value="">-- ਚੁਣੋ --</option>
+                            <option value="fresher">Fresher (ਨਵਾਂ)</option>
+                            <option value="1-2">1-2 ਸਾਲ</option>
+                            <option value="3+">3+ ਸਾਲ</option>
+                        </select>
+
+                        <button type="submit" class="btn-submit">
+                            <i class="fas fa-user-plus"></i> ਰਜਿਸਟਰ ਕਰੋ
+                        </button>
+                    </form>
+                </div>
+                <div class="form-illustration">
+                    <i class="fas fa-hand-holding-heart"></i>
+                    <p style="font-size:1rem; color:rgba(255,255,255,0.5); margin-top:10px;">ਤੁਹਾਡੀ ਸੇਵਾ ਦੀ ਲੋੜ ਹੈ!</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== CATEGORY 2: TAKE CARE FORM ========== -->
+        <section class="form-section" id="take-care-section" data-aos="fade-left" data-aos-duration="1200">
+            <h2 class="form-section-title">🏥 ਸਾਨੂੰ ਸੇਵਾ ਚਾਹੀਦੀ ਹੈ</h2>
+            <p class="form-section-desc">ਆਪਣੇ ਪਰਿਵਾਰ ਲਈ ਤਜਰਬੇਕਾਰ ਦੇਖਭਾਲ ਕਰਨ ਵਾਲੇ ਲੱਭੋ।</p>
+            <div style="text-align:center;">
+                <span class="fee-badge">💰 ਫ਼ੀਸ: ₹20,000/ਮਹੀਨਾ</span>
+            </div>
+            <div class="form-glass-container">
+                <div class="form-illustration">
+                    <i class="fas fa-people-roof"></i>
+                    <p style="font-size:1rem; color:rgba(255,255,255,0.5); margin-top:10px;">ਅਸੀਂ ਤੁਹਾਡੇ ਲਈ ਹਾਜ਼ਰ ਹਾਂ!</p>
+                </div>
+                <div class="form-fields">
+                    <form id="takeCareForm" onsubmit="handleTakeCareSubmit(event)">
+                        <label>ਤੁਹਾਡਾ ਨਾਮ <span style="color:#ff6b6b;">*</span></label>
+                        <input type="text" placeholder="ਆਪਣਾ ਨਾਮ ਲਿਖੋ" required id="t_name">
+
+                        <label>ਫ਼ੋਨ ਨੰਬਰ <span style="color:#ff6b6b;">*</span></label>
+                        <input type="tel" placeholder="98765-XXXXX" required pattern="[0-9]{10}" title="10 ਅੰਕਾਂ ਦਾ ਫ਼ੋਨ ਨੰਬਰ ਪਾਓ" id="t_phone">
+
+                        <label>ਮਰੀਜ਼/ਮੈਂਬਰ ਦਾ ਨਾਮ <span style="color:#ff6b6b;">*</span></label>
+                        <input type="text" placeholder="ਜਿਸਨੂੰ ਦੇਖਭਾਲ ਚਾਹੀਦੀ ਹੈ" required id="t_patient">
+
+                        <label>ਕਿਸ ਲਈ ਦੇਖਭਾਲ ਚਾਹੀਦੀ ਹੈ? <span style="color:#ff6b6b;">*</span></label>
+                        <select required id="t_care_for">
+                            <option value="">-- ਚੁਣੋ --</option>
+                            <option value="baby">👶 ਬੱਚਾ (Baby)</option>
+                            <option value="young">🧑 ਨੌਜਵਾਨ (Young)</option>
+                            <option value="elderly">👴 ਬਜ਼ੁਰਗ (Older/Elderly)</option>
+                        </select>
+
+                        <label>ਬਠਿੰਡਾ ਵਿੱਚ ਪਤਾ <span style="color:#ff6b6b;">*</span></label>
+                        <input type="text" placeholder="ਪਿੰਡ/ਸ਼ਹਿਰ, ਬਠਿੰਡਾ" required id="t_address">
+
+                        <label>ਲੋੜ ਦਾ ਵੇਰਵਾ</label>
+                        <textarea rows="3" placeholder="ਆਪਣੀ ਲੋੜ ਬਾਰੇ ਥੋੜ੍ਹਾ ਦੱਸੋ..." id="t_description"></textarea>
+
+                        <button type="submit" class="btn-submit">
+                            <i class="fas fa-phone-volume"></i> ਕਾਲ ਬੈਕ ਲਈ ਬੇਨਤੀ ਕਰੋ
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== CONTACT BAR ========== -->
+        <div class="contact-bar" id="contact-sec" data-aos="fade-up">
+            <div class="phone-number">
+                <i class="fas fa-phone-alt"></i> +91-98765-XXXXX
+            </div>
+            <p class="district-info">
+                📍 ਸਿਰਫ਼ ਬਠਿੰਡਾ ਜ਼ਿਲ੍ਹੇ (ਸ਼ਹਿਰ ਅਤੇ ਪਿੰਡ) ਲਈ ਸੇਵਾ ਉਪਲਬਧ ਹੈ।
+            </p>
+        </div>
+
+        <!-- ========== FOOTER ========== -->
+        <div class="footer">
+            <p>© 2024 House Caring Service, ਬਠਿੰਡਾ। ਸਾਰੇ ਅਧਿਕਾਰ ਰਾਖਵੇਂ ਹਨ।</p>
+        </div>
+
+    </div>
+
+    <!-- ========== FLOATING CALL BUTTON ========== -->
+    <a href="tel:+9198765XXXXX" class="floating-call-btn" title="ਹੁਣੇ ਕਾਲ ਕਰੋ">
+        <i class="fas fa-phone"></i>
+    </a>
+
+    <!-- ========== TOAST OVERLAY ========== -->
+    <div class="toast-overlay" id="toastOverlay">
+        <div class="toast-box">
+            <i class="fas fa-check-circle"></i>
+            <h2>ਧੰਨਵਾਦ! 🙏</h2>
+            <p>ਸਾਡੀ ਟੀਮ ਜਲਦੀ ਹੀ ਤੁਹਾਡੇ ਨਾਲ ਸੰਪਰਕ ਕਰੇਗੀ।</p>
+            <button class="toast-close-btn" onclick="closeToast()">ਠੀਕ ਹੈ 👍</button>
+        </div>
+    </div>
+
+    <!-- ========== SCRIPTS ========== -->
+    <!-- AOS JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js">
+    </script>
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 1000,
+            once: true,
+            easing: 'ease-in-out',
+        });
+
+        // Initialize Particles.js
+        particlesJS('particles-js', {
+            "particles": {
+                "number": { "value": 50, "density": { "enable": true, "value_area": 800 } },
+                "color": { "value": "#ffffff" },
+                "shape": { "type": "circle" },
+                "opacity": { "value": 0.4, "random": true },
+                "size": { "value": 3, "random": true },
+                "line_linked": { "enable": true, "distance": 150, "color": "#ffffff",
+                "opacity": 0.15, "width": 1 },
+                "move": { "enable": true, "speed": 2, "direction": "none", "random": true,
+                "straight": false, "out_mode": "out" }
+            },
+            "interactivity": {
+                "detect_on": "canvas",
+                "events": { "onhover": { "enable": true, "mode": "grab" }, "onclick": { "enable": true,
+                        "mode": "push" }, "resize": true },
+                "modes": { "grab": { "distance": 140, "line_linked": { "opacity": 0.4 } }, "push": { "particles_nb": 3 } }
+            },
+            "retina_detect": true
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Toast functions
+        function showToast() {
+            document.getElementById('toastOverlay').classList.add('active');
+        }
+
+        function closeToast() {
+            document.getElementById('toastOverlay').classList.remove('active');
+        }
+
+        // Close toast on overlay click
+        document.getElementById('toastOverlay').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeToast();
+            }
+        });
+
+        // Form Submit Handlers
+        function handleGiveCareSubmit(event) {
+            event.preventDefault();
+
+            // Check if at least one care type is selected
+            const careCheckboxes = document.querySelectorAll('.g_care_type:checked');
+            if (careCheckboxes.length === 0) {
+                alert('ਕਿਰਪਾ ਕਰਕੇ ਘੱਟੋ-ਘੱਟ ਇੱਕ ਦੇਖਭਾਲ ਦੀ ਕਿਸਮ ਚੁਣੋ! (Please select at least one care type)');
+                return false;
+            }
+
+            // Collect data (in real app, send to server)
+            const formData = {
+                name: document.getElementById('g_name').value,
+                phone: document.getElementById('g_phone').value,
+                email: document.getElementById('g_email').value,
+                address: document.getElementById('g_address').value,
+                gender: document.getElementById('g_gender').value,
+                careTypes: Array.from(careCheckboxes).map(cb => cb.value),
+                experience: document.getElementById('g_experience').value,
+            };
+            console.log('Give Care Form Data:', formData);
+
+            // Show success toast
+            showToast();
+
+            // Reset form
+            document.getElementById('giveCareForm').reset();
+
+            return false;
+        }
+
+        function handleTakeCareSubmit(event) {
+            event.preventDefault();
+
+            // Collect data
+            const formData = {
+                name: document.getElementById('t_name').value,
+                phone: document.getElementById('t_phone').value,
+                patient: document.getElementById('t_patient').value,
+                careFor: document.getElementById('t_care_for').value,
+                address: document.getElementById('t_address').value,
+                description: document.getElementById('t_description').value,
+            };
+            console.log('Take Care Form Data:', formData);
+
+            // Show success toast
+            showToast();
+
+            // Reset form
+            document.getElementById('takeCareForm').reset();
+
+            return false;
+        }
+
+        console.log('✅ House Caring Service - ਬਠਿੰਡਾ ਜ਼ਿਲ੍ਹਾ | Website Ready!');
+        console.log('👶 Categories: Baby Care | Young Care | Elderly Care');
+        console.log('💰 Fee: ₹20,000/ਮਹੀਨਾ');
+    </script>
+</body>
+</html>
