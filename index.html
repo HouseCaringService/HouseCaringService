@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- ========== SEO META TAGS ========== -->
-    <meta name="description" content="House Caring Service – ਬਠਿੰਡਾ ਜ਼ਿਲ੍ਹੇ ਲਈ ਭਰੋਸੇਯੋਗ ਘਰੇਲੂ ਦੇਖਭਾਲ ਸੇਵਾ। ਬਜ਼ੁਰਗਾਂ, ਬੱਚਿਆਂ ਤੇ ਮਰੀਜ਼ਾਂ ਲਈ ਤਜਰਬੇਕਾਰ ਕੇਅਰਗਿਵਰ। ਸੇਵਾ ਦੇਣ ਵਾਲੇ ਰਜਿਸਟਰ ਕਰੋ ਜਾਂ ਆਪਣੇ ਪਰਿਵਾਰ ਲਈ ਸੇਵਾ ਲਓ।">
-    <meta name="keywords" content="House Caring Service, Bathinda care service, elderly care Bathinda, baby care Bathinda, patient care Bathinda, ਘਰੇਲੂ ਦੇਖਭਾਲ, ਬਠਿੰਡਾ ਕੇਅਰ ਸਰਵਿਸ, caregiver Bathinda, home care Punjab">
+    <meta name="description" content="House Caring Service – ਬਠਿੰਡਾ ਜ਼ਿਲ੍ਹੇ ਲਈ ਭਰੋਸੇਯੋਗ ਘਰੇਲੂ ਦੇਖਭਾਲ ਸੇਵਾ। ਬਜ਼ੁਰਗਾਂ, ਬੱਚਿਆਂ ਤੇ ਮਰੀਜ਼ਾਂ ਲਈ ਤਜਰਬੇਕਾਰ ਕੇਅਰਗਿਵਰ।">
+    <meta name="keywords" content="House Caring Service, Bathinda care, elderly care, baby care, patient care, Bathinda">
     <meta name="author" content="House Caring Service">
     <meta name="robots" content="index, follow">
     <meta property="og:title" content="House Caring Service - ਬਠਿੰਡਾ ਜ਼ਿਲ੍ਹਾ">
@@ -134,22 +134,37 @@
             <div class="form-glass-container">
                 <div class="form-fields">
                     <form id="giveCareForm" onsubmit="return handleGiveCareSubmit(event)">
+                        <!-- Full Name -->
                         <div class="input-group">
                             <label><i class="fas fa-user"></i> ਪੂਰਾ ਨਾਮ <span class="required-star">*</span></label>
                             <input type="text" placeholder="ਆਪਣਾ ਪੂਰਾ ਨਾਮ ਲਿਖੋ" required id="g_name">
                         </div>
+
+                        <!-- Phone -->
                         <div class="input-group">
                             <label><i class="fas fa-phone"></i> ਫ਼ੋਨ ਨੰਬਰ <span class="required-star">*</span></label>
                             <input type="tel" placeholder="98765-XXXXX" required pattern="[0-9]{10}" title="10 ਅੰਕਾਂ ਦਾ ਫ਼ੋਨ ਨੰਬਰ ਪਾਓ" id="g_phone">
                         </div>
+
+                        <!-- Email -->
                         <div class="input-group">
                             <label><i class="fas fa-envelope"></i> ਈਮੇਲ <span class="required-star">*</span></label>
                             <input type="email" placeholder="example@email.com" required id="g_email">
                         </div>
+
+                        <!-- Aadhar Card Number (NEW) -->
+                        <div class="input-group">
+                            <label><i class="fas fa-id-card"></i> ਆਧਾਰ ਕਾਰਡ ਨੰਬਰ <span class="required-star">*</span></label>
+                            <input type="text" placeholder="1234 5678 9012" required pattern="[0-9]{12}" title="12 ਅੰਕਾਂ ਦਾ ਆਧਾਰ ਨੰਬਰ ਪਾਓ" maxlength="12" id="g_aadhar">
+                        </div>
+
+                        <!-- Address -->
                         <div class="input-group">
                             <label><i class="fas fa-map-marker-alt"></i> ਬਠਿੰਡਾ ਜ਼ਿਲ੍ਹੇ ਵਿੱਚ ਪੂਰਾ ਪਤਾ <span class="required-star">*</span></label>
                             <input type="text" placeholder="ਪਿੰਡ/ਸ਼ਹਿਰ, ਜ਼ਿਲ੍ਹਾ ਬਠਿੰਡਾ, ਪੰਜਾਬ" required id="g_address">
                         </div>
+
+                        <!-- Gender + Age Row -->
                         <div class="input-row">
                             <div class="input-group half">
                                 <label><i class="fas fa-venus-mars"></i> ਲਿੰਗ <span class="required-star">*</span></label>
@@ -165,6 +180,8 @@
                                 <input type="number" placeholder="ਆਪਣੀ ਉਮਰ" required min="18" max="70" id="g_age">
                             </div>
                         </div>
+
+                        <!-- Care Type Checkboxes -->
                         <div class="input-group">
                             <label><i class="fas fa-tasks"></i> ਤੁਸੀਂ ਕਿਹੜੀ ਦੇਖਭਾਲ ਕਰ ਸਕਦੇ ਹੋ? <span class="required-star">*</span></label>
                             <div class="checkbox-group">
@@ -173,6 +190,8 @@
                                 <label class="checkbox-pill"><input type="checkbox" value="elderly" class="g_care_type"> 👴 ਬਜ਼ੁਰਗਾਂ ਦੀ ਦੇਖਭਾਲ</label>
                             </div>
                         </div>
+
+                        <!-- Experience -->
                         <div class="input-group">
                             <label><i class="fas fa-star"></i> ਤਜਰਬਾ <span class="required-star">*</span></label>
                             <select required id="g_experience">
@@ -182,9 +201,13 @@
                                 <option value="3+">3+ ਸਾਲ</option>
                             </select>
                         </div>
+
+                        <!-- Privacy Note -->
                         <div class="privacy-note">
                             <i class="fas fa-lock"></i> ਤੁਹਾਡੀ ਜਾਣਕਾਰੀ ਪੂਰੀ ਤਰ੍ਹਾਂ ਸੁਰੱਖਿਅਤ ਰਹੇਗੀ।
                         </div>
+
+                        <!-- Submit -->
                         <button type="submit" class="btn-submit">
                             <i class="fas fa-user-plus"></i> ਰਜਿਸਟਰ ਕਰੋ
                         </button>
@@ -210,22 +233,37 @@
                 </div>
                 <div class="form-fields">
                     <form id="takeCareForm" onsubmit="return handleTakeCareSubmit(event)">
+                        <!-- Your Name -->
                         <div class="input-group">
                             <label><i class="fas fa-user"></i> ਤੁਹਾਡਾ ਨਾਮ <span class="required-star">*</span></label>
                             <input type="text" placeholder="ਆਪਣਾ ਨਾਮ ਲਿਖੋ" required id="t_name">
                         </div>
+
+                        <!-- Phone -->
                         <div class="input-group">
                             <label><i class="fas fa-phone"></i> ਫ਼ੋਨ ਨੰਬਰ <span class="required-star">*</span></label>
                             <input type="tel" placeholder="98765-XXXXX" required pattern="[0-9]{10}" title="10 ਅੰਕਾਂ ਦਾ ਫ਼ੋਨ ਨੰਬਰ ਪਾਓ" id="t_phone">
                         </div>
+
+                        <!-- Email -->
                         <div class="input-group">
                             <label><i class="fas fa-envelope"></i> ਈਮੇਲ</label>
                             <input type="email" placeholder="example@email.com (ਜੇਕਰ ਹੈ ਤਾਂ)" id="t_email">
                         </div>
+
+                        <!-- Aadhar Card Number (NEW) -->
+                        <div class="input-group">
+                            <label><i class="fas fa-id-card"></i> ਆਧਾਰ ਕਾਰਡ ਨੰਬਰ <span class="required-star">*</span></label>
+                            <input type="text" placeholder="1234 5678 9012" required pattern="[0-9]{12}" title="12 ਅੰਕਾਂ ਦਾ ਆਧਾਰ ਨੰਬਰ ਪਾਓ" maxlength="12" id="t_aadhar">
+                        </div>
+
+                        <!-- Patient Name -->
                         <div class="input-group">
                             <label><i class="fas fa-user-injured"></i> ਮਰੀਜ਼/ਮੈਂਬਰ ਦਾ ਨਾਮ <span class="required-star">*</span></label>
                             <input type="text" placeholder="ਜਿਸਨੂੰ ਦੇਖਭਾਲ ਚਾਹੀਦੀ ਹੈ" required id="t_patient">
                         </div>
+
+                        <!-- Care For + Age Row -->
                         <div class="input-row">
                             <div class="input-group half">
                                 <label><i class="fas fa-question-circle"></i> ਕਿਸ ਲਈ? <span class="required-star">*</span></label>
@@ -241,17 +279,25 @@
                                 <input type="number" placeholder="ਮਰੀਜ਼/ਮੈਂਬਰ ਦੀ ਉਮਰ" id="t_age">
                             </div>
                         </div>
+
+                        <!-- Address -->
                         <div class="input-group">
                             <label><i class="fas fa-map-marker-alt"></i> ਬਠਿੰਡਾ ਵਿੱਚ ਪੂਰਾ ਪਤਾ <span class="required-star">*</span></label>
                             <input type="text" placeholder="ਪਿੰਡ/ਸ਼ਹਿਰ, ਜ਼ਿਲ੍ਹਾ ਬਠਿੰਡਾ, ਪੰਜਾਬ" required id="t_address">
                         </div>
+
+                        <!-- Description -->
                         <div class="input-group">
                             <label><i class="fas fa-clipboard-list"></i> ਲੋੜ ਦਾ ਵੇਰਵਾ</label>
                             <textarea rows="4" placeholder="ਆਪਣੀ ਲੋੜ ਬਾਰੇ ਥੋੜ੍ਹਾ ਦੱਸੋ... (ਜਿਵੇਂ: ਦਵਾਈਆਂ ਦਾ ਸਮਾਂ, ਕੋਈ ਖਾਸ ਧਿਆਨ ਆਦਿ)" id="t_description"></textarea>
                         </div>
+
+                        <!-- Privacy Note -->
                         <div class="privacy-note">
                             <i class="fas fa-lock"></i> ਤੁਹਾਡੀ ਜਾਣਕਾਰੀ ਪੂਰੀ ਤਰ੍ਹਾਂ ਸੁਰੱਖਿਅਤ ਰਹੇਗੀ।
                         </div>
+
+                        <!-- Submit -->
                         <button type="submit" class="btn-submit">
                             <i class="fas fa-phone-volume"></i> ਕਾਲ ਬੈਕ ਲਈ ਬੇਨਤੀ ਕਰੋ
                         </button>
@@ -366,15 +412,12 @@
                 "shape": { "type": "circle" },
                 "opacity": { "value": 0.4, "random": true },
                 "size": { "value": 3, "random": true },
-                "line_linked": { "enable": true, "distance": 150, "color": "#ffffff", "opacity": 0.15,
-                "width": 1 },
-                "move": { "enable": true, "speed": 2, "direction": "none", "random": true, "straight": false,
-                    "out_mode": "out" }
+                "line_linked": { "enable": true, "distance": 150, "color": "#ffffff", "opacity": 0.15, "width": 1 },
+                "move": { "enable": true, "speed": 2, "direction": "none", "random": true, "straight": false, "out_mode": "out" }
             },
             "interactivity": {
                 "detect_on": "canvas",
-                "events": { "onhover": { "enable": true, "mode": "grab" }, "onclick": { "enable": true,
-                        "mode": "push" }, "resize": true },
+                "events": { "onhover": { "enable": true, "mode": "grab" }, "onclick": { "enable": true, "mode": "push" }, "resize": true },
                 "modes": { "grab": { "distance": 140, "line_linked": { "opacity": 0.4 } }, "push": { "particles_nb": 3 } }
             },
             "retina_detect": true
@@ -389,15 +432,12 @@
 
         // Toast Functions
         function showToast() { document.getElementById('toastOverlay').classList.add('active'); }
-
         function closeToast() { document.getElementById('toastOverlay').classList.remove('active'); }
-        document.getElementById('toastOverlay').addEventListener('click', function(e) { if (e.target === this)
-                closeToast(); });
+        document.getElementById('toastOverlay').addEventListener('click', function(e) { if (e.target === this) closeToast(); });
 
         // ========== EMAIL INTEGRATION (EmailJS) ==========
-        // Tusi EmailJS.com te account bnake apni keys replace kar sakde ho
         (function() {
-            emailjs.init("YOUR_PUBLIC_KEY"); // Apni EmailJS Public Key pado
+            emailjs.init("YOUR_PUBLIC_KEY");
         })();
 
         function sendEmail(formData, formType) {
@@ -406,10 +446,12 @@
                 name: formData.name,
                 phone: formData.phone,
                 email: formData.email || 'ਨਹੀਂ ਦਿੱਤੀ',
+                aadhar: formData.aadhar || '',
                 address: formData.address,
                 care_for: formData.careFor || formData.careTypes?.join(', ') || '',
                 experience: formData.experience || '',
                 age: formData.age || '',
+                gender: formData.gender || '',
                 patient: formData.patient || '',
                 description: formData.description || '',
                 to_email: 'housecaringservice.bathinda@gmail.com'
@@ -435,6 +477,7 @@
                 name: document.getElementById('g_name').value,
                 phone: document.getElementById('g_phone').value,
                 email: document.getElementById('g_email').value,
+                aadhar: document.getElementById('g_aadhar').value,
                 address: document.getElementById('g_address').value,
                 gender: document.getElementById('g_gender').value,
                 age: document.getElementById('g_age').value,
@@ -454,6 +497,7 @@
                 name: document.getElementById('t_name').value,
                 phone: document.getElementById('t_phone').value,
                 email: document.getElementById('t_email').value,
+                aadhar: document.getElementById('t_aadhar').value,
                 patient: document.getElementById('t_patient').value,
                 careFor: document.getElementById('t_care_for').value,
                 age: document.getElementById('t_age').value,
